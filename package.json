@@ -4,7 +4,8 @@
   "description": "Node.js backend for Next.js React Application",
   "main": "dist/server.js",
   "scripts": {
-    "start": "ts-node-dev -r dotenv/config src/app.ts"
+    "start": "ts-node src/config/server.ts",
+    "dev": "ts-node-dev -r dotenv/config src/app.ts"
   },
   "keywords": [],
   "author": "Akash Perera | akashennn",
