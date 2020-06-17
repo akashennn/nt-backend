@@ -13,7 +13,7 @@ routes.use(cors({origin: corsUrl, optionsSuccessStatus: 200}));
 const router = express()
 routes.use('/v1.0', router);
 
-router.get('/ping', (req, res) => {
+router.get('/users/:user_id/favourites', (req, res) => {
     UserService.GetUserFavourite(req, res)
 });
 
