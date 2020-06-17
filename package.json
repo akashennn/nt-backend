@@ -1,0 +1,27 @@
+{
+  "name": "nt-backend",
+  "version": "1.0.0",
+  "description": "Node.js backend for Next.js React Application",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "ts-node-dev -r dotenv/config src/app.ts"
+  },
+  "keywords": [],
+  "author": "Akash Perera | akashennn",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.2.1",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "dotenv": "^8.2.0",
+    "ts-node-dev": "^1.0.0-pre.49",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  }
+}
