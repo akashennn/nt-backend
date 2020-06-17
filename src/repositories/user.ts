@@ -1,9 +1,21 @@
 import PSQL from "./psql";
-import {Favourites} from "../entity/favourite";
-import Logger from "./../domain/logger";
 
 export default class UserRepository {
-    public static async GetFavourites(userId): Promise<Favourites> {
-        return PSQL.query('SELECT * FROM user_favourite_mapping WHERE user_id = $1', [userId]);
+    public static async GetFavourites(userId): Promise<any> {
+        return PSQL.query('SELECT * FROM user_favourite_mapping WHERE user_id = $1', [userId])
+        .then(value => {
+            return value
+        }).catch(error => {
+            return error
+        });
+    }
+
+    public static async DeleteFavourites(userId, postId): Promise<any> {
+        return PSQL.query('DELETE FROM user_favourite_mapping WHERE user_id = $1 AND post_id = $2;', [userId, postId])
+            .then(value => {
+                return value
+            }).catch(error => {
+                return error
+            })
     }
 }
