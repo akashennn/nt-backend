@@ -1,7 +1,7 @@
 {
   "name": "nt-backend",
   "version": "1.0.0",
-  "description": "Node.js backend for Next.js React Application",
+  "description": "Node.js backend for Next.js React Application.",
   "main": "dist/app.js",
   "scripts": {
     "build-ts": "tsc",
