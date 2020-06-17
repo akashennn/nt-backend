@@ -4,7 +4,7 @@
   "description": "Node.js backend for Next.js React Application",
   "main": "dist/server.js",
   "scripts": {
-    "start": "ts-node src/config/server.ts",
+    "start": "ts-node -r dotenv/config src/app.ts",
     "dev": "ts-node-dev -r dotenv/config src/app.ts"
   },
   "keywords": [],
