@@ -21,4 +21,8 @@ router.delete('/users/:user_id/favourites/posts/:post_id', (req, res) => {
     UserService.DeleteUserFavourite(req, res)
 });
 
+router.patch('/users/:user_id/favourites', (req, res) => {
+    UserService.UpdateUserFavourite(req, res)
+});
+
 export default routes;
