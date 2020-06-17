@@ -1,9 +1,8 @@
 import PSQL from "./psql";
-import {Favourites} from "../entity/favourite";
 
 export default class UserRepository {
     public static async GetFavourites(userId): Promise<any> {
-        return PSQL.query('SELECT * FROM user_favourite_mapping WHERE user_id = $1', [userId])
+        return PSQL.query('SELECT * FROM user_favourite_mapping WHERE user_id = $1;', [userId])
             .then(value => {
                 return value
             }).catch(error => {
