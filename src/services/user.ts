@@ -30,7 +30,7 @@ export default class UserService {
         }
 
         UserRepository.DeleteFavourites(userId, postId).then(value => {
-            if (value.rowCount == 0) {
+            if (value.rowCount == 0 || value.rowCount == undefined) {
                 new NewDomainError([deleteUserFavouriteErrorResponse]).send(res);
             } else {
                 res.send(deleteUserFavouriteSuccessResponse)
@@ -61,7 +61,7 @@ export default class UserService {
 
         if (favourites.isFavourite == true) {
             UserRepository.InsertFavourites(favourites).then(value => {
-                if (value.rowCount == 0) {
+                if (value.rowCount == 0 || value.rowCount == undefined) {
                     new NewDomainError(value).send(res);
                 } else {
                     res.send(insertFavouritesSuccessResponse)
@@ -83,7 +83,7 @@ export default class UserService {
             }
 
             UserRepository.DeleteFavourites(favourites.userId, favourites.postId).then(value => {
-                if (value.rowCount == 0) {
+                if (value.rowCount == 0 || value.rowCount == undefined) {
                     new NewDomainError([deleteUserFavouriteErrorResponse]).send(res);
                 } else {
                     res.send(deleteUserFavouriteSuccessResponse)
